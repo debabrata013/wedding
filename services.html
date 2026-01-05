@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Wedding Services - WeddingPlanners</title>
+<!-- Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&amp;display=swap" rel="stylesheet"/>
+<!-- Icons -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Theme Configuration -->
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#d411d4",
+                        "background-light": "#f8f6f8",
+                        "background-dark": "#221022",
+                    },
+                    fontFamily: {
+                        "display": ["Manrope", "sans-serif"]
+                    },
+                    borderRadius: {"DEFAULT": "0.5rem", "lg": "1rem", "xl": "1.5rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark font-display text-[#181118] overflow-x-hidden">
+<!-- Top Navigation -->
+<header class="bg-white border-b border-[#f4f0f4] sticky top-0 z-50">
+<div class="max-w-[1200px] mx-auto px-4 sm:px-10 h-16 flex items-center justify-between">
+<div class="flex items-center gap-2">
+<div class="text-primary">
+<span class="material-symbols-outlined text-3xl">diversity_1</span>
+</div>
+<h2 class="text-lg font-bold tracking-tight">WeddingPlanners</h2>
+</div>
+<nav class="hidden md:flex gap-8 items-center">
+<a class="text-sm font-medium hover:text-primary transition-colors" href="#">Home</a>
+<a class="text-sm font-bold text-primary" href="#">Services</a>
+<a class="text-sm font-medium hover:text-primary transition-colors" href="#">Gallery</a>
+<a class="text-sm font-medium hover:text-primary transition-colors" href="#">About Us</a>
+<a class="text-sm font-medium hover:text-primary transition-colors" href="#">Contact</a>
+</nav>
+<button class="hidden sm:flex items-center justify-center rounded-xl bg-primary text-white text-sm font-bold px-6 py-2.5 hover:bg-opacity-90 transition-colors">
+                Get a Quote
+            </button>
+<!-- Mobile Menu Icon -->
+<button class="md:hidden p-2 text-gray-600">
+<span class="material-symbols-outlined">menu</span>
+</button>
+</div>
+</header>
+<!-- Breadcrumbs -->
+<div class="bg-white pt-6 pb-2">
+<div class="max-w-[960px] mx-auto px-4 sm:px-10">
+<div class="flex items-center gap-2 text-sm">
+<a class="text-gray-500 hover:text-primary" href="#">Home</a>
+<span class="text-gray-400">/</span>
+<span class="text-primary font-medium">Services</span>
+</div>
+</div>
+</div>
+<!-- Hero Section -->
+<section class="bg-white pb-12 pt-4">
+<div class="max-w-[960px] mx-auto px-4 sm:px-10 flex flex-col md:flex-row justify-between gap-8 items-center">
+<div class="flex-1 space-y-4">
+<h1 class="text-4xl md:text-5xl font-black leading-tight tracking-tight text-[#181118]">
+                    Orchestrating Your <span class="text-primary">Dream Wedding</span>
+</h1>
+<p class="text-gray-600 text-lg md:text-xl leading-relaxed max-w-2xl">
+                    From intimate ceremonies to grand celebrations, we handle every detail with precision and care, creating memories that last a lifetime.
+                </p>
+</div>
+<!-- Decorative Visual -->
+<div class="w-full md:w-1/3 aspect-video md:aspect-square rounded-xl overflow-hidden shadow-lg relative bg-gray-100">
+<div class="absolute inset-0 bg-primary/10"></div>
+<img alt="Indian Wedding Details" class="w-full h-full object-cover" data-alt="Close up of Indian wedding details and jewelry" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBZq6zoAhd1BduHtuTTGZzWzyofxF0r6ToWBhOS18nUfyh15voZqswL2RmyqcgvBQYYD4Cf66v6oToK3qk-M2IY1dGYRnYS-XHcL7M1ewhGLP069X951cOtDFZoT5TpUhgMlsJaPNJ-OoP7XWZFRI2QAUGau8DkCtTi5R5WC35S4dp9aq5tt0INK7DBZ2d6wWOgoNGsXK_QOGZjnQiSJqOOip4RSgaVgnpj4IjbEIzXi9cgWvk7lnms9IP-CkeoGjtOREehHGOAfZqy"/>
+</div>
+</div>
+</section>
+<!-- Trust/Intro Section -->
+<section class="bg-background-light py-16">
+<div class="max-w-[960px] mx-auto px-4 sm:px-10 text-center">
+<div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 text-primary text-sm font-bold mb-6">
+<span class="material-symbols-outlined text-sm">verified</span>
+                Trusted by 500+ Families
+            </div>
+<h2 class="text-3xl font-bold mb-4">Your One-Stop Wedding Solution</h2>
+<p class="text-gray-600 max-w-2xl mx-auto leading-relaxed">
+                We understand that every wedding is unique. Our holistic approach ensures that whether you have a modest budget or a lavish one, the quality and execution remain flawless. We bridge the gap between your vision and reality.
+            </p>
+</div>
+</section>
+<!-- Core Services Section -->
+<section class="bg-white py-16 md:py-24">
+<div class="max-w-[1200px] mx-auto px-4 sm:px-10">
+<div class="mb-12">
+<h2 class="text-3xl font-bold text-[#181118]">Our Core Services</h2>
+<p class="text-gray-500 mt-2">Everything you need under one roof</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+<!-- Service Card 1 -->
+<div class="group bg-white border border-gray-100 p-6 rounded-2xl shadow-sm hover:shadow-xl hover:border-primary/30 transition-all duration-300">
+<div class="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center text-primary mb-4 group-hover:bg-primary group-hover:text-white transition-colors">
+<span class="material-symbols-outlined">event_note</span>
+</div>
+<h3 class="text-xl font-bold mb-2">Full Wedding Planning</h3>
+<p class="text-gray-600 text-sm mb-4 leading-relaxed">End-to-end management including vendor coordination, timeline creation, and budget tracking.</p>
+<button class="text-primary text-sm font-bold flex items-center gap-1 group-hover:gap-2 transition-all">
+                        Learn more <span class="material-symbols-outlined text-sm">arrow_forward</span>
+</button>
+</div>
+<!-- Service Card 2 -->
+<div class="group bg-white border border-gray-100 p-6 rounded-2xl shadow-sm hover:shadow-xl hover:border-primary/30 transition-all duration-300">
+<div class="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center text-primary mb-4 group-hover:bg-primary group-hover:text-white transition-colors">
+<span class="material-symbols-outlined">temple_hindu</span>
+</div>
+<h3 class="text-xl font-bold mb-2">Venue &amp; Arrangements</h3>
+<p class="text-gray-600 text-sm mb-4 leading-relaxed">Finding the perfect location, handling bookings, and managing on-site logistics for all events.</p>
+<button class="text-primary text-sm font-bold flex items-center gap-1 group-hover:gap-2 transition-all">
+                        Learn more <span class="material-symbols-outlined text-sm">arrow_forward</span>
+</button>
+</div>
+<!-- Service Card 3 -->
+<div class="group bg-white border border-gray-100 p-6 rounded-2xl shadow-sm hover:shadow-xl hover:border-primary/30 transition-all duration-300">
+<div class="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center text-primary mb-4 group-hover:bg-primary group-hover:text-white transition-colors">
+<span class="material-symbols-outlined">yard</span>
+</div>
+<h3 class="text-xl font-bold mb-2">Decoration &amp; Themes</h3>
+<p class="text-gray-600 text-sm mb-4 leading-relaxed">Floral arrangements, stage setups, lighting, and thematic styling customized to your taste.</p>
+<button class="text-primary text-sm font-bold flex items-center gap-1 group-hover:gap-2 transition-all">
+                        Learn more <span class="material-symbols-outlined text-sm">arrow_forward</span>
+</button>
+</div>
+<!-- Service Card 4 -->
+<div class="group bg-white border border-gray-100 p-6 rounded-2xl shadow-sm hover:shadow-xl hover:border-primary/30 transition-all duration-300">
+<div class="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center text-primary mb-4 group-hover:bg-primary group-hover:text-white transition-colors">
+<span class="material-symbols-outlined">restaurant_menu</span>
+</div>
+<h3 class="text-xl font-bold mb-2">Catering &amp; Menu</h3>
+<p class="text-gray-600 text-sm mb-4 leading-relaxed">Curating diverse menus from traditional Indian feasts to international cuisines with top caterers.</p>
+<button class="text-primary text-sm font-bold flex items-center gap-1 group-hover:gap-2 transition-all">
+                        Learn more <span class="material-symbols-outlined text-sm">arrow_forward</span>
+</button>
+</div>
+<!-- Service Card 5 -->
+<div class="group bg-white border border-gray-100 p-6 rounded-2xl shadow-sm hover:shadow-xl hover:border-primary/30 transition-all duration-300">
+<div class="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center text-primary mb-4 group-hover:bg-primary group-hover:text-white transition-colors">
+<span class="material-symbols-outlined">camera_enhance</span>
+</div>
+<h3 class="text-xl font-bold mb-2">Photography</h3>
+<p class="text-gray-600 text-sm mb-4 leading-relaxed">Capturing your special moments with cinematic videography, candid shoots, and pre-wedding albums.</p>
+<button class="text-primary text-sm font-bold flex items-center gap-1 group-hover:gap-2 transition-all">
+                        Learn more <span class="material-symbols-outlined text-sm">arrow_forward</span>
+</button>
+</div>
+<!-- Service Card 6 -->
+<div class="group bg-white border border-gray-100 p-6 rounded-2xl shadow-sm hover:shadow-xl hover:border-primary/30 transition-all duration-300">
+<div class="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center text-primary mb-4 group-hover:bg-primary group-hover:text-white transition-colors">
+<span class="material-symbols-outlined">flight_takeoff</span>
+</div>
+<h3 class="text-xl font-bold mb-2">Guest Logistics</h3>
+<p class="text-gray-600 text-sm mb-4 leading-relaxed">Managing guest lists, invitations, transportation, hotel accommodations, and RSVPs seamlessly.</p>
+<button class="text-primary text-sm font-bold flex items-center gap-1 group-hover:gap-2 transition-all">
+                        Learn more <span class="material-symbols-outlined text-sm">arrow_forward</span>
+</button>
+</div>
+</div>
+</div>
+</section>
+<!-- Budget Compatibility Section -->
+<section class="bg-background-light py-16 md:py-24">
+<div class="max-w-[1200px] mx-auto px-4 sm:px-10">
+<div class="text-center mb-12">
+<h2 class="text-3xl font-bold mb-4">Services Designed for Every Budget</h2>
+<p class="text-gray-600 max-w-2xl mx-auto">We believe every wedding deserves to be beautiful. Choose a range that fits your financial plan.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+<!-- Budget Tier 1 -->
+<div class="bg-white rounded-2xl overflow-hidden shadow-md flex flex-col h-full border border-gray-100">
+<div class="h-48 overflow-hidden relative">
+<img class="w-full h-full object-cover transform hover:scale-105 transition-transform duration-500" data-alt="Simple elegant floral centerpiece for intimate wedding" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDTX_vcpmhdPj0UDhhPi3I7HRyTA8r5XoRN_ufQ_FpeNVj-f2VRSDv8PLMpsMmdIaB3CtQIdQFiistQBY3W8cVPgM-7jTyAizBZufynJ_SIHd1efx2p7WQ2jtb0nOMrNmtCQI-2ynFClaHXzBMMR5_2IhY6rxlt643pmecAIjZQQCb7fPQzqGIzOAAjN2UV4g-f5wRbuTwse-t6y8H-GAU2sGNxGEIDjUQ3h_FOmHiUIYYVcI5zrreLZNRW9y8XnAm3GkKJIvgVxBRV"/>
+<div class="absolute top-4 right-4 bg-white/90 backdrop-blur px-3 py-1 rounded-full text-sm font-bold shadow-sm">
+                            Under ₹6 Lakhs
+                        </div>
+</div>
+<div class="p-6 flex-1 flex flex-col">
+<h3 class="text-xl font-bold mb-2 text-[#181118]">Essential Elegance</h3>
+<p class="text-gray-500 text-sm mb-6">Perfect for intimate gatherings and focused celebrations.</p>
+<ul class="space-y-3 mb-8 flex-1">
+<li class="flex items-start gap-2 text-sm text-gray-700">
+<span class="material-symbols-outlined text-primary text-[20px]">check_circle</span>
+                                Standard Venue Selection
+                            </li>
+<li class="flex items-start gap-2 text-sm text-gray-700">
+<span class="material-symbols-outlined text-primary text-[20px]">check_circle</span>
+                                Beautiful Floral Decor
+                            </li>
+<li class="flex items-start gap-2 text-sm text-gray-700">
+<span class="material-symbols-outlined text-primary text-[20px]">check_circle</span>
+                                Buffet Catering (Standard)
+                            </li>
+<li class="flex items-start gap-2 text-sm text-gray-700">
+<span class="material-symbols-outlined text-primary text-[20px]">check_circle</span>
+                                One Day Photography
+                            </li>
+</ul>
+<button class="w-full py-3 rounded-lg border border-primary text-primary font-bold hover:bg-primary hover:text-white transition-colors">
+                            Explore Plan
+                        </button>
+</div>
+</div>
+<!-- Budget Tier 2 -->
+<div class="bg-white rounded-2xl overflow-hidden shadow-xl flex flex-col h-full border-2 border-primary/20 relative transform md:-translate-y-4">
+<div class="absolute top-0 inset-x-0 bg-primary text-white text-center text-xs font-bold py-1 uppercase tracking-wider">Most Popular</div>
+<div class="h-48 overflow-hidden relative mt-6">
+<img class="w-full h-full object-cover transform hover:scale-105 transition-transform duration-500" data-alt="Grand wedding stage with colorful drapes and lights" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBc-Lhrujmtdvu3-0HstOLPSCDqYdXydPOR64ScrTuQ6_awobmmA-XdoEHHGuif2YBUAR3HLU3ZbiUqi7W6vBvkSIPszxvdIblFKZPNkz_WOHr3MOPeUGZRyCX0swmvt8bcoe_a69mjnFnKeLDMnSxKmz96xJjFQcJ1XGUsLn7gZK0KKq9IqUchXwZZHzPJ8LRGYJjBijtRX3mtDvwleZ8zl35cE8j6-VvhOkpbFrkQzEf_wHUMJvvLJ965_IUyZxj-ueo3U1x6HDo9"/>
+<div class="absolute top-4 right-4 bg-primary text-white px-3 py-1 rounded-full text-sm font-bold shadow-sm">
+                            Under ₹10 Lakhs
+                        </div>
+</div>
+<div class="p-6 flex-1 flex flex-col">
+<h3 class="text-xl font-bold mb-2 text-[#181118]">Grand Celebration</h3>
+<p class="text-gray-500 text-sm mb-6">A complete package for a memorable traditional wedding.</p>
+<ul class="space-y-3 mb-8 flex-1">
+<li class="flex items-start gap-2 text-sm text-gray-700">
+<span class="material-symbols-outlined text-primary text-[20px]">check_circle</span>
+                                Premium Banquets/Lawns
+                            </li>
+<li class="flex items-start gap-2 text-sm text-gray-700">
+<span class="material-symbols-outlined text-primary text-[20px]">check_circle</span>
+                                Themed Decor &amp; Lighting
+                            </li>
+<li class="flex items-start gap-2 text-sm text-gray-700">
+<span class="material-symbols-outlined text-primary text-[20px]">check_circle</span>
+                                Premium Multi-Cuisine Menu
+                            </li>
+<li class="flex items-start gap-2 text-sm text-gray-700">
+<span class="material-symbols-outlined text-primary text-[20px]">check_circle</span>
+                                2-Day Photo &amp; Videography
+                            </li>
+<li class="flex items-start gap-2 text-sm text-gray-700">
+<span class="material-symbols-outlined text-primary text-[20px]">check_circle</span>
+                                DJ &amp; Entertainment
+                            </li>
+</ul>
+<button class="w-full py-3 rounded-lg bg-primary text-white font-bold hover:bg-opacity-90 transition-colors shadow-lg shadow-primary/30">
+                            Explore Plan
+                        </button>
+</div>
+</div>
+<!-- Budget Tier 3 -->
+<div class="bg-white rounded-2xl overflow-hidden shadow-md flex flex-col h-full border border-gray-100">
+<div class="h-48 overflow-hidden relative">
+<img class="w-full h-full object-cover transform hover:scale-105 transition-transform duration-500" data-alt="Luxury wedding setup with chandelier and gold accents" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBB6jL2WGw0xOrNNGuMBiubQoRSJtYfqyFbSNN0byIP8N8p-MOmV781ljnXOUg23eCqc6hHyTs1rKy6_o8SB6e4QeNnHFdQ7iAQt24UWnbfipTptp_Hg1PPbzNc1R5-Wi8XLxc_ocMkdTYUGGKD6G8PSW1-QQWlJkBMPDF-iQbKIW_vC-wqTbF-LQxpGthUiNqA0N2S7MWRi7Rqtpfc3UgNr_A-XYHTjEbmlKQPrixqBKYqXkAVigK62QKJnHH7BIDykcds25PpoUD0"/>
+<div class="absolute top-4 right-4 bg-white/90 backdrop-blur px-3 py-1 rounded-full text-sm font-bold shadow-sm text-primary">
+                            Custom Budget
+                        </div>
+</div>
+<div class="p-6 flex-1 flex flex-col">
+<h3 class="text-xl font-bold mb-2 text-[#181118]">Royal &amp; Bespoke</h3>
+<p class="text-gray-500 text-sm mb-6">Limitless possibilities for a truly unique fairytale wedding.</p>
+<ul class="space-y-3 mb-8 flex-1">
+<li class="flex items-start gap-2 text-sm text-gray-700">
+<span class="material-symbols-outlined text-primary text-[20px]">check_circle</span>
+                                Destination Weddings
+                            </li>
+<li class="flex items-start gap-2 text-sm text-gray-700">
+<span class="material-symbols-outlined text-primary text-[20px]">check_circle</span>
+                                Celebrity Performers
+                            </li>
+<li class="flex items-start gap-2 text-sm text-gray-700">
+<span class="material-symbols-outlined text-primary text-[20px]">check_circle</span>
+                                Designer Decor &amp; Sets
+                            </li>
+<li class="flex items-start gap-2 text-sm text-gray-700">
+<span class="material-symbols-outlined text-primary text-[20px]">check_circle</span>
+                                Luxury Logistics (Vintage Cars)
+                            </li>
+</ul>
+<button class="w-full py-3 rounded-lg border border-primary text-primary font-bold hover:bg-primary hover:text-white transition-colors">
+                            Contact for Quote
+                        </button>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- How It Works / Process -->
+<section class="bg-white py-16">
+<div class="max-w-[1200px] mx-auto px-4 sm:px-10">
+<h2 class="text-3xl font-bold mb-12 text-center">How We Customize Your Experience</h2>
+<div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8 relative">
+<!-- Connecting Line (Desktop) -->
+<div class="hidden md:block absolute top-12 left-[12%] right-[12%] h-0.5 bg-gray-200 -z-0"></div>
+<!-- Step 1 -->
+<div class="relative z-10 flex flex-col items-center text-center">
+<div class="w-24 h-24 bg-white border-4 border-[#f4f0f4] rounded-full flex items-center justify-center mb-4 shadow-sm">
+<span class="material-symbols-outlined text-primary text-4xl">chat_bubble_outline</span>
+</div>
+<h3 class="font-bold text-lg mb-2">1. Consultation</h3>
+<p class="text-sm text-gray-600">We meet to understand your vision, preferences, and budget constraints.</p>
+</div>
+<!-- Step 2 -->
+<div class="relative z-10 flex flex-col items-center text-center">
+<div class="w-24 h-24 bg-white border-4 border-[#f4f0f4] rounded-full flex items-center justify-center mb-4 shadow-sm">
+<span class="material-symbols-outlined text-primary text-4xl">savings</span>
+</div>
+<h3 class="font-bold text-lg mb-2">2. Budget Planning</h3>
+<p class="text-sm text-gray-600">We create a tailored plan maximizing value within your financial comfort zone.</p>
+</div>
+<!-- Step 3 -->
+<div class="relative z-10 flex flex-col items-center text-center">
+<div class="w-24 h-24 bg-white border-4 border-[#f4f0f4] rounded-full flex items-center justify-center mb-4 shadow-sm">
+<span class="material-symbols-outlined text-primary text-4xl">handshake</span>
+</div>
+<h3 class="font-bold text-lg mb-2">3. Vendor Selection</h3>
+<p class="text-sm text-gray-600">Choose from our curated list of trusted vendors that match your style.</p>
+</div>
+<!-- Step 4 -->
+<div class="relative z-10 flex flex-col items-center text-center">
+<div class="w-24 h-24 bg-white border-4 border-[#f4f0f4] rounded-full flex items-center justify-center mb-4 shadow-sm">
+<span class="material-symbols-outlined text-primary text-4xl">celebration</span>
+</div>
+<h3 class="font-bold text-lg mb-2">4. Execution</h3>
+<p class="text-sm text-gray-600">Relax and enjoy while our team executes every detail to perfection.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Why Us -->
+<section class="bg-background-light py-16">
+<div class="max-w-[960px] mx-auto px-4 sm:px-10">
+<h2 class="text-3xl font-bold mb-10 text-center">Why Our Services Stand Out</h2>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-8">
+<div class="flex gap-4">
+<div class="min-w-12 h-12 bg-white rounded-lg flex items-center justify-center text-primary shadow-sm">
+<span class="material-symbols-outlined">visibility</span>
+</div>
+<div>
+<h4 class="font-bold text-lg mb-1">Total Transparency</h4>
+<p class="text-sm text-gray-600">No hidden costs. We provide detailed breakdowns of where every rupee goes.</p>
+</div>
+</div>
+<div class="flex gap-4">
+<div class="min-w-12 h-12 bg-white rounded-lg flex items-center justify-center text-primary shadow-sm">
+<span class="material-symbols-outlined">groups</span>
+</div>
+<div>
+<h4 class="font-bold text-lg mb-1">Dedicated Team</h4>
+<p class="text-sm text-gray-600">A personal wedding manager is assigned to you for 24/7 support.</p>
+</div>
+</div>
+<div class="flex gap-4">
+<div class="min-w-12 h-12 bg-white rounded-lg flex items-center justify-center text-primary shadow-sm">
+<span class="material-symbols-outlined">network_check</span>
+</div>
+<div>
+<h4 class="font-bold text-lg mb-1">Wide Vendor Network</h4>
+<p class="text-sm text-gray-600">Access to the best rates from verified venues, caterers, and decorators.</p>
+</div>
+</div>
+<div class="flex gap-4">
+<div class="min-w-12 h-12 bg-white rounded-lg flex items-center justify-center text-primary shadow-sm">
+<span class="material-symbols-outlined">style</span>
+</div>
+<div>
+<h4 class="font-bold text-lg mb-1">Custom Styling</h4>
+<p class="text-sm text-gray-600">Unique themes designed specifically for your story, not reused templates.</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- CTA Section -->
+<section class="bg-white py-20">
+<div class="max-w-[960px] mx-auto px-4 sm:px-10">
+<div class="bg-background-dark rounded-3xl p-8 md:p-12 text-center md:text-left flex flex-col md:flex-row items-center justify-between gap-8 shadow-2xl relative overflow-hidden">
+<!-- Decorative Circles -->
+<div class="absolute -top-24 -left-24 w-48 h-48 rounded-full bg-primary opacity-20 blur-3xl"></div>
+<div class="absolute -bottom-24 -right-24 w-64 h-64 rounded-full bg-primary opacity-20 blur-3xl"></div>
+<div class="relative z-10 max-w-lg">
+<h2 class="text-3xl md:text-4xl font-bold text-white mb-4">Ready to Plan Your Wedding?</h2>
+<p class="text-gray-300 text-lg">Let's discuss your dream wedding and create a plan that fits your style and budget perfectly.</p>
+</div>
+<div class="relative z-10 flex flex-col sm:flex-row gap-4 w-full md:w-auto">
+<button class="px-8 py-3 bg-primary text-white rounded-xl font-bold hover:bg-[#b00eb0] transition-colors whitespace-nowrap shadow-lg shadow-primary/25">
+                        Get a Personalized Quote
+                    </button>
+<button class="px-8 py-3 bg-white/10 text-white border border-white/20 rounded-xl font-bold hover:bg-white/20 transition-colors whitespace-nowrap backdrop-blur-sm">
+                        Book Free Consultation
+                    </button>
+</div>
+</div>
+</div>
+</section>
+<!-- Footer -->
+<footer class="bg-white border-t border-[#f4f0f4] pt-16 pb-8">
+<div class="max-w-[1200px] mx-auto px-4 sm:px-10">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
+<div class="col-span-1 md:col-span-1">
+<div class="flex items-center gap-2 mb-4">
+<div class="text-primary">
+<span class="material-symbols-outlined text-2xl">diversity_1</span>
+</div>
+<h3 class="text-lg font-bold">WeddingPlanners</h3>
+</div>
+<p class="text-gray-500 text-sm leading-relaxed">Making your special day unforgettable with seamless planning and execution across India.</p>
+</div>
+<div>
+<h4 class="font-bold mb-4">Services</h4>
+<ul class="space-y-2 text-sm text-gray-600">
+<li><a class="hover:text-primary" href="#">Planning</a></li>
+<li><a class="hover:text-primary" href="#">Venues</a></li>
+<li><a class="hover:text-primary" href="#">Decoration</a></li>
+<li><a class="hover:text-primary" href="#">Catering</a></li>
+</ul>
+</div>
+<div>
+<h4 class="font-bold mb-4">Company</h4>
+<ul class="space-y-2 text-sm text-gray-600">
+<li><a class="hover:text-primary" href="#">About Us</a></li>
+<li><a class="hover:text-primary" href="#">Gallery</a></li>
+<li><a class="hover:text-primary" href="#">Testimonials</a></li>
+<li><a class="hover:text-primary" href="#">Contact</a></li>
+</ul>
+</div>
+<div>
+<h4 class="font-bold mb-4">Contact Us</h4>
+<ul class="space-y-2 text-sm text-gray-600">
+<li class="flex items-center gap-2"><span class="material-symbols-outlined text-primary text-sm">call</span> +91 98765 43210</li>
+<li class="flex items-center gap-2"><span class="material-symbols-outlined text-primary text-sm">mail</span> hello@weddingplanners.com</li>
+<li class="flex items-center gap-2"><span class="material-symbols-outlined text-primary text-sm">location_on</span> Mumbai, India</li>
+</ul>
+</div>
+</div>
+<div class="border-t border-gray-100 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
+<p class="text-gray-400 text-sm">© 2023 WeddingPlanners. All rights reserved.</p>
+<div class="flex gap-4">
+<a class="text-gray-400 hover:text-primary" href="#"><i class="fa-brands fa-instagram"></i></a>
+<a class="text-gray-400 hover:text-primary" href="#"><i class="fa-brands fa-facebook"></i></a>
+<a class="text-gray-400 hover:text-primary" href="#"><i class="fa-brands fa-twitter"></i></a>
+</div>
+</div>
+</div>
+</footer>
+</body></html>
