@@ -5,13 +5,11 @@
 <head>
     <meta charset="utf-8" />
     <meta content="width=device-width, initial-scale=1.0" name="viewport" />
-    <title>Shaadi Dreams - Portfolio</title>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
-        rel="stylesheet" />
+    <title>WedPlan - Portfolio</title>
     <link href="https://fonts.googleapis.com" rel="preconnect" />
     <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
-    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700;800&amp;display=swap"
+    <link
+        href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700;800&amp;family=Playfair+Display:wght@400;600;700&amp;display=swap"
         rel="stylesheet" />
     <link
         href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
@@ -23,58 +21,52 @@
             theme: {
                 extend: {
                     colors: {
-                        "primary": "#d411d4",
-                        "background-light": "#f8f6f8",
-                        "background-dark": "#221022",
+                        "primary": "#D41C40", // Warm Red/Rose
+                        "primary-dark": "#9F1239",
+                        "accent": "#F59E0B", // Gold
+                        "background-light": "#FFFCF8", // Creamy white
+                        "background-dark": "#1C1917", // Warm dark
+                        "surface-light": "#FFF1F2", // Light pinkish tint
                     },
                     fontFamily: {
-                        "display": ["Manrope", "sans-serif"]
+                        "display": ["Manrope", "sans-serif"],
+                        "serif": ["Playfair Display", "serif"],
                     },
-                    borderRadius: { "DEFAULT": "0.5rem", "lg": "1rem", "xl": "1.5rem", "full": "9999px" },
+                    borderRadius: { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" },
                 },
             },
         }
     </script>
-    <style>
-        body {
-            font-family: 'Manrope', sans-serif;
-        }
-    </style>
 </head>
 
-<body class="bg-background-light dark:bg-background-dark text-[#181118] dark:text-white font-display overflow-x-hidden">
+<body class="font-display bg-background-light dark:bg-background-dark text-[#292524] dark:text-stone-100">
     <!-- Top Navigation -->
     <header
-        class="sticky top-0 z-50 flex items-center justify-between whitespace-nowrap border-b border-solid border-b-[#e5e0e5] dark:border-b-[#3a2a3a] bg-white/90 dark:bg-[#1a0b1a]/90 backdrop-blur-md px-4 sm:px-10 py-3">
-        <div class="flex items-center gap-4 text-[#181118] dark:text-white">
-            <div class="size-8 text-primary">
-                <span class="material-symbols-outlined text-3xl">diversity_1</span>
+        class="sticky top-0 z-50 flex items-center justify-between border-b border-rose-100 dark:border-stone-800 bg-white/95 dark:bg-background-dark/95 backdrop-blur-md px-6 md:px-10 py-4 shadow-sm">
+        <div class="flex items-center gap-3 text-primary">
+            <div class="size-9 flex items-center justify-center rounded-full bg-rose-50 dark:bg-rose-900/20">
+                <span class="material-symbols-outlined text-3xl">favorite</span>
             </div>
-            <h2 class="text-[#181118] dark:text-white text-lg font-bold leading-tight tracking-[-0.015em]">Shaadi Dreams
-            </h2>
+            <h2 class="text-[#292524] dark:text-white text-2xl font-serif font-bold leading-tight tracking-tight">
+                WedPlan</h2>
         </div>
         <div class="flex flex-1 justify-end gap-8">
-            <div class="hidden md:flex items-center gap-9">
-                <a class="text-[#181118] dark:text-gray-200 text-sm font-medium leading-normal hover:text-primary transition-colors"
-                    href="#">Home</a>
-                <a class="text-primary text-sm font-bold leading-normal" href="#">Portfolio</a>
-                <a class="text-[#181118] dark:text-gray-200 text-sm font-medium leading-normal hover:text-primary transition-colors"
-                    href="#">Services</a>
-                <a class="text-[#181118] dark:text-gray-200 text-sm font-medium leading-normal hover:text-primary transition-colors"
-                    href="#">Testimonials</a>
-                <a class="text-[#181118] dark:text-gray-200 text-sm font-medium leading-normal hover:text-primary transition-colors"
-                    href="#">Contact</a>
+            <div class="hidden md:flex items-center gap-8">
+                <a class="text-[#292524] dark:text-stone-300 text-sm font-semibold hover:text-primary transition-colors uppercase tracking-wide"
+                    href="index.html">Home</a>
+                <a class="text-[#292524] dark:text-stone-300 text-sm font-semibold hover:text-primary transition-colors uppercase tracking-wide"
+                    href="services.html">Services</a>
+                <a class="text-[#292524] dark:text-stone-300 text-sm font-semibold hover:text-primary transition-colors uppercase tracking-wide"
+                    href="portfolio.html">Portfolio</a>
+                <a class="text-[#292524] dark:text-stone-300 text-sm font-semibold hover:text-primary transition-colors uppercase tracking-wide"
+                    href="testimonials.html">Testimonials</a>
+                <a class="text-[#292524] dark:text-stone-300 text-sm font-semibold hover:text-primary transition-colors uppercase tracking-wide"
+                    href="contactus.html">Contact</a>
             </div>
-            <div class="flex gap-2">
-                <button
-                    class="flex min-w-[84px] cursor-pointer items-center justify-center overflow-hidden rounded-xl h-10 px-4 bg-primary text-white text-sm font-bold leading-normal tracking-[0.015em] hover:bg-primary/90 transition-all shadow-md shadow-primary/20">
-                    <span class="truncate">Get a Quote</span>
-                </button>
-                <button
-                    class="hidden sm:flex min-w-[84px] cursor-pointer items-center justify-center overflow-hidden rounded-xl h-10 px-4 bg-[#f4f0f4] dark:bg-[#3a2a3a] text-[#181118] dark:text-white text-sm font-bold leading-normal tracking-[0.015em] hover:bg-gray-200 dark:hover:bg-[#4a3a4a] transition-colors">
-                    <span class="truncate">Login</span>
-                </button>
-            </div>
+            <button
+                class="flex min-w-[84px] cursor-pointer items-center justify-center overflow-hidden rounded-full h-10 px-6 bg-primary hover:bg-primary-dark transition-colors text-white text-sm font-bold shadow-lg shadow-rose-500/20">
+                <span class="truncate">Free Consultation</span>
+            </button>
         </div>
     </header>
     <!-- Hero Section -->
@@ -491,7 +483,8 @@
         </div>
         <div class="max-w-[800px] mx-auto relative z-10 text-center flex flex-col items-center gap-6">
             <h2 class="text-4xl sm:text-5xl font-black text-[#181118] dark:text-white leading-tight">Ready to plan your
-                <span class="text-primary">Big Day?</span></h2>
+                <span class="text-primary">Big Day?</span>
+            </h2>
             <p class="text-lg text-gray-600 dark:text-gray-300 max-w-[600px]">
                 Whether you have a clear vision or need inspiration, our team is here to guide you every step of the
                 way. Let's create something beautiful together.
@@ -513,23 +506,70 @@
         </div>
     </section>
     <!-- Footer Simple -->
-    <footer class="bg-white dark:bg-[#1a0b1a] border-t border-gray-100 dark:border-[#2a1a2a] py-8 px-4 sm:px-10">
-        <div class="max-w-[1280px] mx-auto flex flex-col md:flex-row justify-between items-center gap-4">
-            <div class="flex items-center gap-2">
-                <div class="size-6 text-primary">
-                    <span class="material-symbols-outlined text-2xl">diversity_1</span>
+    <footer class="bg-background-dark text-white py-16 border-t border-stone-800">
+        <div class="max-w-[1200px] mx-auto px-4 md:px-8 grid grid-cols-1 md:grid-cols-4 gap-12">
+            <div class="flex flex-col gap-6">
+                <div class="flex items-center gap-2 text-primary">
+                    <span class="material-symbols-outlined text-3xl">favorite</span>
+                    <span class="text-2xl font-serif font-bold text-white">WedPlan</span>
                 </div>
-                <span class="font-bold text-[#181118] dark:text-white">Shaadi Dreams</span>
+                <p class="text-stone-400 text-sm leading-relaxed">Making Indian weddings seamless, memorable, and
+                    budget-friendly. Your trusted partner for the big day.</p>
             </div>
-            <p class="text-sm text-gray-500">© 2024 Shaadi Dreams. All rights reserved.</p>
-            <div class="flex gap-4">
-                <a class="text-gray-500 hover:text-primary transition-colors" href="#"><i
-                        class="material-symbols-outlined">adb</i></a> <!-- using adb as placeholder for social -->
-                <a class="text-gray-500 hover:text-primary transition-colors" href="#"><i
-                        class="material-symbols-outlined">photo_camera</i></a>
-                <a class="text-gray-500 hover:text-primary transition-colors" href="#"><i
-                        class="material-symbols-outlined">mail</i></a>
+            <div>
+                <h4 class="font-serif font-bold text-lg mb-6 text-white tracking-wide">Services</h4>
+                <ul class="flex flex-col gap-3 text-stone-400 text-sm">
+                    <li><a class="hover:text-primary transition-colors" href="#">Venue Booking</a></li>
+                    <li><a class="hover:text-primary transition-colors" href="#">Catering &amp; Menu</a></li>
+                    <li><a class="hover:text-primary transition-colors" href="#">Decor &amp; Themes</a></li>
+                    <li><a class="hover:text-primary transition-colors" href="#">Photography</a></li>
+                    <li><a class="hover:text-primary transition-colors" href="#">Makeup Artists</a></li>
+                </ul>
             </div>
+            <div>
+                <h4 class="font-serif font-bold text-lg mb-6 text-white tracking-wide">Company</h4>
+                <ul class="flex flex-col gap-3 text-stone-400 text-sm">
+                    <li><a class="hover:text-primary transition-colors" href="#">About Us</a></li>
+                    <li><a class="hover:text-primary transition-colors" href="#">Careers</a></li>
+                    <li><a class="hover:text-primary transition-colors" href="#">Blog</a></li>
+                    <li><a class="hover:text-primary transition-colors" href="#">Contact</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="font-serif font-bold text-lg mb-6 text-white tracking-wide">Contact Us</h4>
+                <ul class="flex flex-col gap-4 text-stone-400 text-sm">
+                    <li class="flex items-start gap-3">
+                        <span class="material-symbols-outlined text-primary text-lg mt-0.5">location_on</span>
+                        <span>123, Wedding Lane, Hauz Khas,<br />New Delhi, India 110016</span>
+                    </li>
+                    <li class="flex items-center gap-3">
+                        <span class="material-symbols-outlined text-primary text-lg">call</span>
+                        <span>+91 98765 43210</span>
+                    </li>
+                    <li class="flex items-center gap-3">
+                        <span class="material-symbols-outlined text-primary text-lg">mail</span>
+                        <span>hello@wedplan.in</span>
+                    </li>
+                </ul>
+                <div class="flex gap-4 mt-8">
+                    <a class="size-10 rounded-full bg-stone-800 flex items-center justify-center hover:bg-primary transition-colors text-white border border-stone-700 hover:border-primary"
+                        href="#">
+                        <span class="text-xs font-bold">IG</span>
+                    </a>
+                    <a class="size-10 rounded-full bg-stone-800 flex items-center justify-center hover:bg-primary transition-colors text-white border border-stone-700 hover:border-primary"
+                        href="#">
+                        <span class="text-xs font-bold">FB</span>
+                    </a>
+                    <a class="size-10 rounded-full bg-stone-800 flex items-center justify-center hover:bg-primary transition-colors text-white border border-stone-700 hover:border-primary"
+                        href="#">
+                        <span class="text-xs font-bold">TW</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div
+            class="max-w-[1200px] mx-auto px-4 md:px-8 mt-16 pt-8 border-t border-stone-800 text-center text-stone-500 text-sm">
+            <p>© 2024 WedPlan. All rights reserved.</p>
         </div>
     </footer>
 </body>
