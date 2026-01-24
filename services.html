@@ -7,7 +7,7 @@
     <link href="https://fonts.googleapis.com" rel="preconnect" />
     <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
     <link
-        href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700;800&amp;family=Playfair+Display:wght@400;600;700&amp;display=swap"
+        href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Manrope:wght@400;500;700;800&family=Playfair+Display:wght@400;600;700&display=swap"
         rel="stylesheet" />
     <link
         href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
@@ -29,6 +29,7 @@
                     fontFamily: {
                         "display": ["Manrope", "sans-serif"],
                         "serif": ["Playfair Display", "serif"],
+                        "script": ["Great Vibes", "cursive"],
                     },
                     borderRadius: { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" },
                 },
@@ -38,58 +39,128 @@
 </head>
 
 <body class="font-display bg-background-light dark:bg-background-dark text-[#292524] dark:text-stone-100">
+    <!-- Loading Screen -->
+    <div id="page-loader"
+        class="fixed inset-0 z-[100] bg-white flex items-center justify-center transition-opacity duration-700">
+        <div class="relative w-24 h-24 flex items-center justify-center">
+            <!-- Heart 1 -->
+            <span class="material-symbols-outlined text-rose-300 absolute text-4xl transform scale-0 animate-heart-grow"
+                style="animation-delay: 0.1s;">favorite</span>
+            <!-- Heart 2 -->
+            <span class="material-symbols-outlined text-rose-400 absolute text-5xl transform scale-0 animate-heart-grow"
+                style="animation-delay: 0.3s; margin-left: -20px; margin-top: 10px;">favorite</span>
+            <!-- Heart 3 -->
+            <span class="material-symbols-outlined text-rose-500 absolute text-3xl transform scale-0 animate-heart-grow"
+                style="animation-delay: 0.2s; margin-left: 20px; margin-top: -10px;">favorite</span>
+        </div>
+    </div>
+    <style>
+        @keyframes growHeart {
+            0% {
+                transform: scale(0);
+                opacity: 0;
+            }
+
+            50% {
+                transform: scale(1.2);
+                opacity: 1;
+            }
+
+            100% {
+                transform: scale(1);
+                opacity: 1;
+            }
+        }
+
+        .animate-heart-grow {
+            animation: growHeart 0.5s ease-out forwards;
+        }
+
+        @keyframes scroll-left {
+            0% {
+                transform: translateX(0);
+            }
+
+            100% {
+                transform: translateX(-50%);
+            }
+        }
+
+        .animate-scroll {
+            animation: scroll-left 30s linear infinite;
+        }
+
+        .animate-scroll:hover {
+            animation-play-state: paused;
+        }
+    </style>
     <div class="relative flex min-h-screen w-full flex-col overflow-x-hidden">
         <!-- Top Navigation -->
         <header
-            class="sticky top-0 z-50 border-b border-rose-100 dark:border-stone-800 bg-white/95 dark:bg-background-dark/95 backdrop-blur-md shadow-sm">
-            <div class="flex items-center justify-between px-6 md:px-10 py-4">
-                <div class="flex items-center gap-3 text-primary">
-                    <div class="size-9 flex items-center justify-center rounded-full bg-rose-50 dark:bg-rose-900/20">
-                        <span class="material-symbols-outlined text-3xl">favorite</span>
+            class="sticky top-0 z-50 bg-[#1a0b0b]/95 backdrop-blur-md border-b border-white/10 shadow-xl transition-all duration-300">
+            <div class="max-w-[1400px] mx-auto px-4 md:px-8">
+                <!-- Desktop Nav -->
+                <div class="hidden lg:flex items-center justify-center py-2">
+                    <!-- Left Links -->
+                    <nav class="flex items-center gap-8 xl:gap-12 pt-4">
+                        <a href="index.html"
+                            class="text-[#D4AF37] hover:text-white transition-all text-3xl font-script tracking-wide">Home</a>
+                        <a href="services.html"
+                            class="text-[#D4AF37] hover:text-white transition-all text-3xl font-script tracking-wide">Services</a>
+                        <a href="portfolio.html"
+                            class="text-[#D4AF37] hover:text-white transition-all text-3xl font-script tracking-wide">Gallery</a>
+                    </nav>
+
+                    <!-- Logo Center -->
+                    <div class="flex flex-col items-center px-12 relative -top-2">
+                        <div class="flex flex-col items-center justify-center text-[#D4AF37]">
+                            <!-- Placeholder for the intricate logo in the image -->
+                            <div
+                                class="relative size-16 flex items-center justify-center border-2 border-[#D4AF37] rounded-full p-2 mb-1">
+                                <span class="material-symbols-outlined text-4xl">favorite</span>
+                                <div class="absolute -top-3 text-2xl font-script">W</div>
+                            </div>
+                            <h1
+                                class="text-[#D4AF37] text-lg font-serif font-bold tracking-[0.2em] uppercase whitespace-nowrap">
+                                WedPlan</h1>
+                        </div>
                     </div>
-                    <h2
-                        class="text-[#292524] dark:text-white text-2xl font-serif font-bold leading-tight tracking-tight">
-                        WedPlan</h2>
+
+                    <!-- Right Links -->
+                    <nav class="flex items-center gap-8 xl:gap-12 pt-4">
+                        <a href="testimonials.html"
+                            class="text-[#D4AF37] hover:text-white transition-all text-3xl font-script tracking-wide">Testimonials</a>
+                        <a href="contactus.html"
+                            class="text-[#D4AF37] hover:text-white transition-all text-3xl font-script tracking-wide">Contact
+                            Us</a>
+                    </nav>
                 </div>
-                <div class="hidden md:flex flex-1 justify-end gap-8">
-                    <div class="flex items-center gap-8">
-                        <a class="text-[#292524] dark:text-stone-300 text-sm font-semibold hover:text-primary transition-colors uppercase tracking-wide"
-                            href="index.html">Home</a>
-                        <a class="text-[#292524] dark:text-stone-300 text-sm font-semibold hover:text-primary transition-colors uppercase tracking-wide"
-                            href="services.html">Services</a>
-                        <a class="text-[#292524] dark:text-stone-300 text-sm font-semibold hover:text-primary transition-colors uppercase tracking-wide"
-                            href="portfolio.html">Portfolio</a>
-                        <a class="text-[#292524] dark:text-stone-300 text-sm font-semibold hover:text-primary transition-colors uppercase tracking-wide"
-                            href="testimonials.html">Testimonials</a>
-                        <a class="text-[#292524] dark:text-stone-300 text-sm font-semibold hover:text-primary transition-colors uppercase tracking-wide"
-                            href="contactus.html">Contact</a>
+
+                <!-- Mobile Header -->
+                <div class="lg:hidden flex items-center justify-between py-4">
+                    <div class="flex items-center gap-2 text-[#D4AF37]">
+                        <span class="material-symbols-outlined text-3xl">favorite</span>
+                        <span class="text-xl font-serif font-bold tracking-widest uppercase">WedPlan</span>
                     </div>
-                    <button
-                        class="flex min-w-[84px] cursor-pointer items-center justify-center overflow-hidden rounded-full h-10 px-6 bg-primary hover:bg-primary-dark transition-colors text-white text-sm font-bold shadow-lg shadow-rose-500/20">
-                        <span class="truncate">Free Consultation</span>
+                    <button id="mobile-menu-btn" class="text-[#D4AF37] focus:outline-none">
+                        <span class="material-symbols-outlined text-3xl">menu</span>
                     </button>
                 </div>
-                <button id="mobile-menu-btn" class="md:hidden text-primary focus:outline-none">
-                    <span class="material-symbols-outlined text-3xl">menu</span>
-                </button>
             </div>
+
             <!-- Mobile Menu -->
             <div id="mobile-menu"
-                class="hidden md:hidden bg-white dark:bg-background-dark border-t border-rose-100 dark:border-stone-800 px-6 py-4 flex flex-col gap-4">
-                <a class="text-[#292524] dark:text-stone-300 text-sm font-semibold hover:text-primary transition-colors uppercase tracking-wide"
+                class="hidden lg:hidden bg-[#1a0b0b] border-t border-white/10 px-6 py-6 flex flex-col gap-6 absolute w-full left-0 shadow-2xl">
+                <a class="text-[#D4AF37] text-2xl font-script hover:text-white transition-colors text-center"
                     href="index.html">Home</a>
-                <a class="text-[#292524] dark:text-stone-300 text-sm font-semibold hover:text-primary transition-colors uppercase tracking-wide"
+                <a class="text-[#D4AF37] text-2xl font-script hover:text-white transition-colors text-center"
                     href="services.html">Services</a>
-                <a class="text-[#292524] dark:text-stone-300 text-sm font-semibold hover:text-primary transition-colors uppercase tracking-wide"
-                    href="portfolio.html">Portfolio</a>
-                <a class="text-[#292524] dark:text-stone-300 text-sm font-semibold hover:text-primary transition-colors uppercase tracking-wide"
+                <a class="text-[#D4AF37] text-2xl font-script hover:text-white transition-colors text-center"
+                    href="portfolio.html">Gallery</a>
+                <a class="text-[#D4AF37] text-2xl font-script hover:text-white transition-colors text-center"
                     href="testimonials.html">Testimonials</a>
-                <a class="text-[#292524] dark:text-stone-300 text-sm font-semibold hover:text-primary transition-colors uppercase tracking-wide"
-                    href="contactus.html">Contact</a>
-                <button
-                    class="w-full flex cursor-pointer items-center justify-center overflow-hidden rounded-full h-10 px-6 bg-primary hover:bg-primary-dark transition-colors text-white text-sm font-bold shadow-lg shadow-rose-500/20">
-                    <span class="truncate">Free Consultation</span>
-                </button>
+                <a class="text-[#D4AF37] text-2xl font-script hover:text-white transition-colors text-center"
+                    href="contactus.html">Contact Us</a>
             </div>
         </header>
         <!-- Breadcrumbs -->
@@ -141,105 +212,389 @@
                 </p>
             </div>
         </section>
-        <!-- Core Services Section -->
-        <section class="bg-white py-16 md:py-24">
-            <div class="max-w-[1200px] mx-auto px-4 sm:px-10">
-                <div class="mb-12">
-                    <h2 class="text-3xl font-bold text-[#181118]">Our Core Services</h2>
-                    <p class="text-gray-500 mt-2">Everything you need under one roof</p>
+        <!-- Full Service Event Production Section -->
+        <section class="bg-white py-20 overflow-hidden">
+            <div class="max-w-[1400px] mx-auto px-4 md:px-8">
+                <!-- Header -->
+                <div class="text-center mb-20">
+                    <h3 class="text-primary text-xl md:text-2xl font-script mb-2">What We Do</h3>
+                    <h2 class="text-3xl md:text-5xl font-serif text-[#1a0b0b] uppercase tracking-wide">Full-Service
+                        Event Production</h2>
                 </div>
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                    <!-- Service Card 1 -->
-                    <div
-                        class="group bg-white border border-gray-100 p-6 rounded-2xl shadow-sm hover:shadow-xl hover:border-primary/30 transition-all duration-300">
-                        <div
-                            class="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center text-primary mb-4 group-hover:bg-primary group-hover:text-white transition-colors">
-                            <span class="material-symbols-outlined">event_note</span>
+
+                <!-- 01 WEDDING VENUES -->
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mb-16">
+                    <div class="lg:pr-12">
+                        <div class="flex items-baseline gap-4 mb-6">
+                            <span class="text-4xl font-serif text-[#1a0b0b]/30">01</span>
+                            <h3 class="text-3xl font-serif text-[#1a0b0b] uppercase tracking-wide">Wedding Venues</h3>
                         </div>
-                        <h3 class="text-xl font-bold mb-2">Full Wedding Planning</h3>
-                        <p class="text-gray-600 text-sm mb-4 leading-relaxed">End-to-end management including vendor
-                            coordination, timeline creation, and budget tracking.</p>
+                        <p class="text-gray-600 text-lg leading-relaxed mb-8">
+                            Explore a wide range of stunning wedding venues available with us! From elegant villas,
+                            grand banquet halls to charming marriage halls, luxurious hotels, and serene resorts– we
+                            bring you the best options in your city or anywhere across India. Tailored to your style and
+                            needs, we ensure your dream venue is just a click away!
+                        </p>
                         <button
-                            class="text-primary text-sm font-bold flex items-center gap-1 group-hover:gap-2 transition-all">
-                            Learn more <span class="material-symbols-outlined text-sm">arrow_forward</span>
+                            class="bg-[#4CD9D9] hover:bg-[#3bc3c3] text-white font-medium py-3 px-8 rounded-lg shadow-lg shadow-[#4CD9D9]/30 transition-all flex items-center gap-2">
+                            Book Us for Wedding Venue
                         </button>
                     </div>
-                    <!-- Service Card 2 -->
-                    <div
-                        class="group bg-white border border-gray-100 p-6 rounded-2xl shadow-sm hover:shadow-xl hover:border-primary/30 transition-all duration-300">
-                        <div
-                            class="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center text-primary mb-4 group-hover:bg-primary group-hover:text-white transition-colors">
-                            <span class="material-symbols-outlined">temple_hindu</span>
-                        </div>
-                        <h3 class="text-xl font-bold mb-2">Venue &amp; Arrangements</h3>
-                        <p class="text-gray-600 text-sm mb-4 leading-relaxed">Finding the perfect location, handling
-                            bookings, and managing on-site logistics for all events.</p>
-                        <button
-                            class="text-primary text-sm font-bold flex items-center gap-1 group-hover:gap-2 transition-all">
-                            Learn more <span class="material-symbols-outlined text-sm">arrow_forward</span>
-                        </button>
-                    </div>
-                    <!-- Service Card 3 -->
-                    <div
-                        class="group bg-white border border-gray-100 p-6 rounded-2xl shadow-sm hover:shadow-xl hover:border-primary/30 transition-all duration-300">
-                        <div
-                            class="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center text-primary mb-4 group-hover:bg-primary group-hover:text-white transition-colors">
-                            <span class="material-symbols-outlined">yard</span>
-                        </div>
-                        <h3 class="text-xl font-bold mb-2">Decoration &amp; Themes</h3>
-                        <p class="text-gray-600 text-sm mb-4 leading-relaxed">Floral arrangements, stage setups,
-                            lighting, and thematic styling customized to your taste.</p>
-                        <button
-                            class="text-primary text-sm font-bold flex items-center gap-1 group-hover:gap-2 transition-all">
-                            Learn more <span class="material-symbols-outlined text-sm">arrow_forward</span>
-                        </button>
-                    </div>
-                    <!-- Service Card 4 -->
-                    <div
-                        class="group bg-white border border-gray-100 p-6 rounded-2xl shadow-sm hover:shadow-xl hover:border-primary/30 transition-all duration-300">
-                        <div
-                            class="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center text-primary mb-4 group-hover:bg-primary group-hover:text-white transition-colors">
-                            <span class="material-symbols-outlined">restaurant_menu</span>
-                        </div>
-                        <h3 class="text-xl font-bold mb-2">Catering &amp; Menu</h3>
-                        <p class="text-gray-600 text-sm mb-4 leading-relaxed">Curating diverse menus from traditional
-                            Indian feasts to international cuisines with top caterers.</p>
-                        <button
-                            class="text-primary text-sm font-bold flex items-center gap-1 group-hover:gap-2 transition-all">
-                            Learn more <span class="material-symbols-outlined text-sm">arrow_forward</span>
-                        </button>
-                    </div>
-                    <!-- Service Card 5 -->
-                    <div
-                        class="group bg-white border border-gray-100 p-6 rounded-2xl shadow-sm hover:shadow-xl hover:border-primary/30 transition-all duration-300">
-                        <div
-                            class="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center text-primary mb-4 group-hover:bg-primary group-hover:text-white transition-colors">
-                            <span class="material-symbols-outlined">camera_enhance</span>
-                        </div>
-                        <h3 class="text-xl font-bold mb-2">Photography</h3>
-                        <p class="text-gray-600 text-sm mb-4 leading-relaxed">Capturing your special moments with
-                            cinematic videography, candid shoots, and pre-wedding albums.</p>
-                        <button
-                            class="text-primary text-sm font-bold flex items-center gap-1 group-hover:gap-2 transition-all">
-                            Learn more <span class="material-symbols-outlined text-sm">arrow_forward</span>
-                        </button>
-                    </div>
-                    <!-- Service Card 6 -->
-                    <div
-                        class="group bg-white border border-gray-100 p-6 rounded-2xl shadow-sm hover:shadow-xl hover:border-primary/30 transition-all duration-300">
-                        <div
-                            class="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center text-primary mb-4 group-hover:bg-primary group-hover:text-white transition-colors">
-                            <span class="material-symbols-outlined">flight_takeoff</span>
-                        </div>
-                        <h3 class="text-xl font-bold mb-2">Guest Logistics</h3>
-                        <p class="text-gray-600 text-sm mb-4 leading-relaxed">Managing guest lists, invitations,
-                            transportation, hotel accommodations, and RSVPs seamlessly.</p>
-                        <button
-                            class="text-primary text-sm font-bold flex items-center gap-1 group-hover:gap-2 transition-all">
-                            Learn more <span class="material-symbols-outlined text-sm">arrow_forward</span>
-                        </button>
+                    <div class="relative h-[400px] rounded-r-3xl overflow-hidden shadow-2xl group">
+                        <img src="pic/WEDDING VENUES/341be67fac0a949691de048707db209d.webp"
+                            class="service-slideshow w-full h-full object-cover transition-all duration-700 group-hover:scale-105"
+                            alt="Luxury Wedding Venue"
+                            data-images='["pic/WEDDING VENUES/05ac28a2e3378d460cf4fb170dc9096d.webp", "pic/WEDDING VENUES/06b9c8210178dbc48b42e8ec7f63928b.webp", "pic/WEDDING VENUES/341be67fac0a949691de048707db209d.webp", "pic/WEDDING VENUES/5c2b21a954fe4788a99fce7eb2e55a59.webp"]'>
                     </div>
                 </div>
+                <!-- Scrolling Gallery 01 -->
+                <div class="relative w-full overflow-hidden mb-32 group">
+                    <div class="flex gap-4 animate-scroll w-[max-content]">
+                        <!-- Duplicate images for seamless scroll -->
+                        <div class="w-[300px] h-[200px] rounded-lg overflow-hidden flex-shrink-0"><img
+                                src="pic/WEDDING VENUES/05ac28a2e3378d460cf4fb170dc9096d.webp"
+                                class="w-full h-full object-cover" alt="Venue 1"></div>
+                        <div class="w-[300px] h-[200px] rounded-lg overflow-hidden flex-shrink-0"><img
+                                src="pic/WEDDING VENUES/06b9c8210178dbc48b42e8ec7f63928b.webp"
+                                class="w-full h-full object-cover" alt="Venue 2"></div>
+                        <div class="w-[300px] h-[200px] rounded-lg overflow-hidden flex-shrink-0"><img
+                                src="pic/WEDDING VENUES/341be67fac0a949691de048707db209d.webp"
+                                class="w-full h-full object-cover" alt="Venue 3"></div>
+                        <div class="w-[300px] h-[200px] rounded-lg overflow-hidden flex-shrink-0"><img
+                                src="pic/WEDDING VENUES/5c2b21a954fe4788a99fce7eb2e55a59.webp"
+                                class="w-full h-full object-cover" alt="Venue 4"></div>
+                        <!-- Repeat -->
+                        <div class="w-[300px] h-[200px] rounded-lg overflow-hidden flex-shrink-0"><img
+                                src="pic/WEDDING VENUES/05ac28a2e3378d460cf4fb170dc9096d.webp"
+                                class="w-full h-full object-cover" alt="Venue 1"></div>
+                        <div class="w-[300px] h-[200px] rounded-lg overflow-hidden flex-shrink-0"><img
+                                src="pic/WEDDING VENUES/06b9c8210178dbc48b42e8ec7f63928b.webp"
+                                class="w-full h-full object-cover" alt="Venue 2"></div>
+                        <div class="w-[300px] h-[200px] rounded-lg overflow-hidden flex-shrink-0"><img
+                                src="pic/WEDDING VENUES/341be67fac0a949691de048707db209d.webp"
+                                class="w-full h-full object-cover" alt="Venue 3"></div>
+                        <div class="w-[300px] h-[200px] rounded-lg overflow-hidden flex-shrink-0"><img
+                                src="pic/WEDDING VENUES/5c2b21a954fe4788a99fce7eb2e55a59.webp"
+                                class="w-full h-full object-cover" alt="Venue 4"></div>
+                        <div class="w-[300px] h-[200px] rounded-lg overflow-hidden flex-shrink-0"><img
+                                src="pic/WEDDING VENUES/05ac28a2e3378d460cf4fb170dc9096d.webp"
+                                class="w-full h-full object-cover" alt="Venue 1"></div>
+                        <div class="w-[300px] h-[200px] rounded-lg overflow-hidden flex-shrink-0"><img
+                                src="pic/WEDDING VENUES/06b9c8210178dbc48b42e8ec7f63928b.webp"
+                                class="w-full h-full object-cover" alt="Venue 2"></div>
+                        <div class="w-[300px] h-[200px] rounded-lg overflow-hidden flex-shrink-0"><img
+                                src="pic/WEDDING VENUES/341be67fac0a949691de048707db209d.webp"
+                                class="w-full h-full object-cover" alt="Venue 3"></div>
+                        <div class="w-[300px] h-[200px] rounded-lg overflow-hidden flex-shrink-0"><img
+                                src="pic/WEDDING VENUES/5c2b21a954fe4788a99fce7eb2e55a59.webp"
+                                class="w-full h-full object-cover" alt="Venue 4"></div>
+                    </div>
+                </div>
+
+                <!-- 02 DECORATIONS -->
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mb-16">
+                    <div class="lg:order-2 lg:pl-12">
+                        <div class="flex items-baseline gap-4 mb-6">
+                            <span class="text-4xl font-serif text-[#1a0b0b]/30">02</span>
+                            <h3 class="text-3xl font-serif text-[#1a0b0b] uppercase tracking-wide">Decorations</h3>
+                        </div>
+                        <p class="text-gray-600 text-lg leading-relaxed mb-8">
+                            From enchanting floral arrangements to stunning theme decoration, we bring your dream
+                            wedding vision to life. Let every corner of your celebration reflect your style, ensuring a
+                            magical ambiance that leaves unforgettable memories for you and your guests.
+                        </p>
+                        <button
+                            class="bg-[#4CD9D9] hover:bg-[#3bc3c3] text-white font-medium py-3 px-8 rounded-lg shadow-lg shadow-[#4CD9D9]/30 transition-all flex items-center gap-2">
+                            Book Us for Decoration
+                        </button>
+                    </div>
+                    <div class="lg:order-1 relative h-[400px] rounded-l-3xl overflow-hidden shadow-2xl group">
+                        <img src="pic/DECORATIONS/04113a45d3e38f2b8e2cea5b963dc7e0.webp"
+                            class="service-slideshow w-full h-full object-cover transition-all duration-700 group-hover:scale-105"
+                            alt="Wedding Decorations"
+                            data-images='["pic/DECORATIONS/04113a45d3e38f2b8e2cea5b963dc7e0.webp", "pic/DECORATIONS/15b0e28e98a139138d21e83a9998f9d0.webp", "pic/DECORATIONS/2ef808e6f1b90e102c87475f6175b04b.webp", "pic/DECORATIONS/60a7f6b9d584bacfba8dbb3e85884628.webp", "pic/DECORATIONS/771d1f263f500d8c712a4dd2027609a0.webp"]'>
+                    </div>
+                </div>
+                <!-- Scrolling Gallery 02 -->
+                <div class="relative w-full overflow-hidden mb-32 group">
+                    <div class="flex gap-4 animate-scroll w-[max-content]">
+                        <div class="w-[300px] h-[200px] rounded-lg overflow-hidden flex-shrink-0"><img
+                                src="pic/DECORATIONS/04113a45d3e38f2b8e2cea5b963dc7e0.webp"
+                                class="w-full h-full object-cover" alt="Decor 1"></div>
+                        <div class="w-[300px] h-[200px] rounded-lg overflow-hidden flex-shrink-0"><img
+                                src="pic/DECORATIONS/15b0e28e98a139138d21e83a9998f9d0.webp"
+                                class="w-full h-full object-cover" alt="Decor 2"></div>
+                        <div class="w-[300px] h-[200px] rounded-lg overflow-hidden flex-shrink-0"><img
+                                src="pic/DECORATIONS/2ef808e6f1b90e102c87475f6175b04b.webp"
+                                class="w-full h-full object-cover" alt="Decor 3"></div>
+                        <div class="w-[300px] h-[200px] rounded-lg overflow-hidden flex-shrink-0"><img
+                                src="pic/DECORATIONS/60a7f6b9d584bacfba8dbb3e85884628.webp"
+                                class="w-full h-full object-cover" alt="Decor 4"></div>
+                        <div class="w-[300px] h-[200px] rounded-lg overflow-hidden flex-shrink-0"><img
+                                src="pic/DECORATIONS/771d1f263f500d8c712a4dd2027609a0.webp"
+                                class="w-full h-full object-cover" alt="Decor 5"></div>
+                        <!-- Repeat -->
+                        <div class="w-[300px] h-[200px] rounded-lg overflow-hidden flex-shrink-0"><img
+                                src="pic/DECORATIONS/04113a45d3e38f2b8e2cea5b963dc7e0.webp"
+                                class="w-full h-full object-cover" alt="Decor 1"></div>
+                        <div class="w-[300px] h-[200px] rounded-lg overflow-hidden flex-shrink-0"><img
+                                src="pic/DECORATIONS/15b0e28e98a139138d21e83a9998f9d0.webp"
+                                class="w-full h-full object-cover" alt="Decor 2"></div>
+                        <div class="w-[300px] h-[200px] rounded-lg overflow-hidden flex-shrink-0"><img
+                                src="pic/DECORATIONS/2ef808e6f1b90e102c87475f6175b04b.webp"
+                                class="w-full h-full object-cover" alt="Decor 3"></div>
+                        <div class="w-[300px] h-[200px] rounded-lg overflow-hidden flex-shrink-0"><img
+                                src="pic/DECORATIONS/60a7f6b9d584bacfba8dbb3e85884628.webp"
+                                class="w-full h-full object-cover" alt="Decor 4"></div>
+                        <div class="w-[300px] h-[200px] rounded-lg overflow-hidden flex-shrink-0"><img
+                                src="pic/DECORATIONS/771d1f263f500d8c712a4dd2027609a0.webp"
+                                class="w-full h-full object-cover" alt="Decor 5"></div>
+                        <div class="w-[300px] h-[200px] rounded-lg overflow-hidden flex-shrink-0"><img
+                                src="pic/DECORATIONS/04113a45d3e38f2b8e2cea5b963dc7e0.webp"
+                                class="w-full h-full object-cover" alt="Decor 1"></div>
+                        <div class="w-[300px] h-[200px] rounded-lg overflow-hidden flex-shrink-0"><img
+                                src="pic/DECORATIONS/15b0e28e98a139138d21e83a9998f9d0.webp"
+                                class="w-full h-full object-cover" alt="Decor 2"></div>
+                        <div class="w-[300px] h-[200px] rounded-lg overflow-hidden flex-shrink-0"><img
+                                src="pic/DECORATIONS/2ef808e6f1b90e102c87475f6175b04b.webp"
+                                class="w-full h-full object-cover" alt="Decor 3"></div>
+                        <div class="w-[300px] h-[200px] rounded-lg overflow-hidden flex-shrink-0"><img
+                                src="pic/DECORATIONS/60a7f6b9d584bacfba8dbb3e85884628.webp"
+                                class="w-full h-full object-cover" alt="Decor 4"></div>
+                        <div class="w-[300px] h-[200px] rounded-lg overflow-hidden flex-shrink-0"><img
+                                src="pic/DECORATIONS/771d1f263f500d8c712a4dd2027609a0.webp"
+                                class="w-full h-full object-cover" alt="Decor 5"></div>
+                    </div>
+                </div>
+
+                <!-- 03 FOOD AND BEVERAGES -->
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mb-16">
+                    <div class="lg:pr-12">
+                        <div class="flex items-baseline gap-4 mb-6">
+                            <span class="text-4xl font-serif text-[#1a0b0b]/30">03</span>
+                            <h3 class="text-3xl font-serif text-[#1a0b0b] uppercase tracking-wide">Food & Beverages</h3>
+                        </div>
+                        <p class="text-gray-600 text-lg leading-relaxed mb-8">
+                            Indulge in a culinary journey with our diverse catering options. From traditional Indian
+                            feasts to international cuisines, our expert chefs create a menu that delights everyone. We
+                            also offer bespoke beverage services to keep the spirits high!
+                        </p>
+                        <button
+                            class="bg-[#4CD9D9] hover:bg-[#3bc3c3] text-white font-medium py-3 px-8 rounded-lg shadow-lg shadow-[#4CD9D9]/30 transition-all flex items-center gap-2">
+                            Book Us for Catering
+                        </button>
+                    </div>
+                    <div class="relative h-[400px] rounded-r-3xl overflow-hidden shadow-2xl group">
+                        <img src="pic/FOOD AND BEVERAGES/21a45e698fa4bcf64908972d7ec16e29.webp"
+                            class="service-slideshow w-full h-full object-cover transition-all duration-700 group-hover:scale-105"
+                            alt="Food and Beverages"
+                            data-images='["pic/FOOD AND BEVERAGES/21a45e698fa4bcf64908972d7ec16e29.webp", "pic/FOOD AND BEVERAGES/3ce21410c6a4516a4fe29dd94e592fe1.webp", "pic/FOOD AND BEVERAGES/628104c3bee4c06409175e704be26f74 copy.webp", "pic/FOOD AND BEVERAGES/6ef28e1aea51ce78c75e40483e6e325c.webp", "pic/FOOD AND BEVERAGES/89bcc189a05ff12357bae5cf5d30c76d.webp"]'>
+                    </div>
+                </div>
+                <!-- Scrolling Gallery 03 -->
+                <div class="relative w-full overflow-hidden mb-32 group">
+                    <div class="flex gap-4 animate-scroll w-[max-content]">
+                        <div class="w-[300px] h-[200px] rounded-lg overflow-hidden flex-shrink-0"><img
+                                src="pic/FOOD AND BEVERAGES/21a45e698fa4bcf64908972d7ec16e29.webp"
+                                class="w-full h-full object-cover" alt="Food 1"></div>
+                        <div class="w-[300px] h-[200px] rounded-lg overflow-hidden flex-shrink-0"><img
+                                src="pic/FOOD AND BEVERAGES/3ce21410c6a4516a4fe29dd94e592fe1.webp"
+                                class="w-full h-full object-cover" alt="Food 2"></div>
+                        <div class="w-[300px] h-[200px] rounded-lg overflow-hidden flex-shrink-0"><img
+                                src="pic/FOOD AND BEVERAGES/628104c3bee4c06409175e704be26f74 copy.webp"
+                                class="w-full h-full object-cover" alt="Food 3"></div>
+                        <div class="w-[300px] h-[200px] rounded-lg overflow-hidden flex-shrink-0"><img
+                                src="pic/FOOD AND BEVERAGES/6ef28e1aea51ce78c75e40483e6e325c.webp"
+                                class="w-full h-full object-cover" alt="Food 4"></div>
+                        <div class="w-[300px] h-[200px] rounded-lg overflow-hidden flex-shrink-0"><img
+                                src="pic/FOOD AND BEVERAGES/89bcc189a05ff12357bae5cf5d30c76d.webp"
+                                class="w-full h-full object-cover" alt="Food 5"></div>
+                        <!-- Repeat -->
+                        <div class="w-[300px] h-[200px] rounded-lg overflow-hidden flex-shrink-0"><img
+                                src="pic/FOOD AND BEVERAGES/21a45e698fa4bcf64908972d7ec16e29.webp"
+                                class="w-full h-full object-cover" alt="Food 1"></div>
+                        <div class="w-[300px] h-[200px] rounded-lg overflow-hidden flex-shrink-0"><img
+                                src="pic/FOOD AND BEVERAGES/3ce21410c6a4516a4fe29dd94e592fe1.webp"
+                                class="w-full h-full object-cover" alt="Food 2"></div>
+                        <div class="w-[300px] h-[200px] rounded-lg overflow-hidden flex-shrink-0"><img
+                                src="pic/FOOD AND BEVERAGES/628104c3bee4c06409175e704be26f74 copy.webp"
+                                class="w-full h-full object-cover" alt="Food 3"></div>
+                        <div class="w-[300px] h-[200px] rounded-lg overflow-hidden flex-shrink-0"><img
+                                src="pic/FOOD AND BEVERAGES/6ef28e1aea51ce78c75e40483e6e325c.webp"
+                                class="w-full h-full object-cover" alt="Food 4"></div>
+                        <div class="w-[300px] h-[200px] rounded-lg overflow-hidden flex-shrink-0"><img
+                                src="pic/FOOD AND BEVERAGES/89bcc189a05ff12357bae5cf5d30c76d.webp"
+                                class="w-full h-full object-cover" alt="Food 5"></div>
+                        <div class="w-[300px] h-[200px] rounded-lg overflow-hidden flex-shrink-0"><img
+                                src="pic/FOOD AND BEVERAGES/21a45e698fa4bcf64908972d7ec16e29.webp"
+                                class="w-full h-full object-cover" alt="Food 1"></div>
+                        <div class="w-[300px] h-[200px] rounded-lg overflow-hidden flex-shrink-0"><img
+                                src="pic/FOOD AND BEVERAGES/3ce21410c6a4516a4fe29dd94e592fe1.webp"
+                                class="w-full h-full object-cover" alt="Food 2"></div>
+                        <div class="w-[300px] h-[200px] rounded-lg overflow-hidden flex-shrink-0"><img
+                                src="pic/FOOD AND BEVERAGES/628104c3bee4c06409175e704be26f74 copy.webp"
+                                class="w-full h-full object-cover" alt="Food 3"></div>
+                        <div class="w-[300px] h-[200px] rounded-lg overflow-hidden flex-shrink-0"><img
+                                src="pic/FOOD AND BEVERAGES/6ef28e1aea51ce78c75e40483e6e325c.webp"
+                                class="w-full h-full object-cover" alt="Food 4"></div>
+                        <div class="w-[300px] h-[200px] rounded-lg overflow-hidden flex-shrink-0"><img
+                                src="pic/FOOD AND BEVERAGES/89bcc189a05ff12357bae5cf5d30c76d.webp"
+                                class="w-full h-full object-cover" alt="Food 5"></div>
+                    </div>
+                </div>
+
+                <!-- 04 PHOTOGRAPHY -->
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mb-16">
+                    <div class="lg:order-2 lg:pl-12">
+                        <div class="flex items-baseline gap-4 mb-6">
+                            <span class="text-4xl font-serif text-[#1a0b0b]/30">04</span>
+                            <h3 class="text-3xl font-serif text-[#1a0b0b] uppercase tracking-wide">Photography</h3>
+                        </div>
+                        <p class="text-gray-600 text-lg leading-relaxed mb-8">
+                            Every picture tells a story, and we make yours legendary. Our professional photographers and
+                            cinematographers capture the raw emotions, the fun, and the grandeur of your wedding, giving
+                            you memories to cherish forever.
+                        </p>
+                        <button
+                            class="bg-[#4CD9D9] hover:bg-[#3bc3c3] text-white font-medium py-3 px-8 rounded-lg shadow-lg shadow-[#4CD9D9]/30 transition-all flex items-center gap-2">
+                            Book Us for Photography
+                        </button>
+                    </div>
+                    <div class="lg:order-1 relative h-[400px] rounded-l-3xl overflow-hidden shadow-2xl group">
+                        <img src="pic/PHOTOGRAPHY/103f9a25635e8670fe851a7bd6956918.webp"
+                            class="service-slideshow w-full h-full object-cover transition-all duration-700 group-hover:scale-105"
+                            alt="Wedding Photography"
+                            data-images='["pic/PHOTOGRAPHY/103f9a25635e8670fe851a7bd6956918.webp", "pic/PHOTOGRAPHY/2fa185a158173586d2c5d6bac20c9d92.webp", "pic/PHOTOGRAPHY/34cca93c0941008ee8eeb634cebff3d1.webp", "pic/PHOTOGRAPHY/79b86e4f9c3b9b01183c48cd341585d4.webp", "pic/PHOTOGRAPHY/84ee7e0bdccf8db789d8b683fb5b1759.webp"]'>
+                    </div>
+                </div>
+                <!-- Scrolling Gallery 04 -->
+                <div class="relative w-full overflow-hidden mb-32 group">
+                    <div class="flex gap-4 animate-scroll w-[max-content]">
+                        <div class="w-[300px] h-[200px] rounded-lg overflow-hidden flex-shrink-0"><img
+                                src="pic/PHOTOGRAPHY/103f9a25635e8670fe851a7bd6956918.webp"
+                                class="w-full h-full object-cover" alt="Photo 1"></div>
+                        <div class="w-[300px] h-[200px] rounded-lg overflow-hidden flex-shrink-0"><img
+                                src="pic/PHOTOGRAPHY/2fa185a158173586d2c5d6bac20c9d92.webp"
+                                class="w-full h-full object-cover" alt="Photo 2"></div>
+                        <div class="w-[300px] h-[200px] rounded-lg overflow-hidden flex-shrink-0"><img
+                                src="pic/PHOTOGRAPHY/34cca93c0941008ee8eeb634cebff3d1.webp"
+                                class="w-full h-full object-cover" alt="Photo 3"></div>
+                        <div class="w-[300px] h-[200px] rounded-lg overflow-hidden flex-shrink-0"><img
+                                src="pic/PHOTOGRAPHY/79b86e4f9c3b9b01183c48cd341585d4.webp"
+                                class="w-full h-full object-cover" alt="Photo 4"></div>
+                        <div class="w-[300px] h-[200px] rounded-lg overflow-hidden flex-shrink-0"><img
+                                src="pic/PHOTOGRAPHY/84ee7e0bdccf8db789d8b683fb5b1759.webp"
+                                class="w-full h-full object-cover" alt="Photo 5"></div>
+                        <!-- Repeat -->
+                        <div class="w-[300px] h-[200px] rounded-lg overflow-hidden flex-shrink-0"><img
+                                src="pic/PHOTOGRAPHY/103f9a25635e8670fe851a7bd6956918.webp"
+                                class="w-full h-full object-cover" alt="Photo 1"></div>
+                        <div class="w-[300px] h-[200px] rounded-lg overflow-hidden flex-shrink-0"><img
+                                src="pic/PHOTOGRAPHY/2fa185a158173586d2c5d6bac20c9d92.webp"
+                                class="w-full h-full object-cover" alt="Photo 2"></div>
+                        <div class="w-[300px] h-[200px] rounded-lg overflow-hidden flex-shrink-0"><img
+                                src="pic/PHOTOGRAPHY/34cca93c0941008ee8eeb634cebff3d1.webp"
+                                class="w-full h-full object-cover" alt="Photo 3"></div>
+                        <div class="w-[300px] h-[200px] rounded-lg overflow-hidden flex-shrink-0"><img
+                                src="pic/PHOTOGRAPHY/79b86e4f9c3b9b01183c48cd341585d4.webp"
+                                class="w-full h-full object-cover" alt="Photo 4"></div>
+                        <div class="w-[300px] h-[200px] rounded-lg overflow-hidden flex-shrink-0"><img
+                                src="pic/PHOTOGRAPHY/84ee7e0bdccf8db789d8b683fb5b1759.webp"
+                                class="w-full h-full object-cover" alt="Photo 5"></div>
+                        <div class="w-[300px] h-[200px] rounded-lg overflow-hidden flex-shrink-0"><img
+                                src="pic/PHOTOGRAPHY/103f9a25635e8670fe851a7bd6956918.webp"
+                                class="w-full h-full object-cover" alt="Photo 1"></div>
+                        <div class="w-[300px] h-[200px] rounded-lg overflow-hidden flex-shrink-0"><img
+                                src="pic/PHOTOGRAPHY/2fa185a158173586d2c5d6bac20c9d92.webp"
+                                class="w-full h-full object-cover" alt="Photo 2"></div>
+                        <div class="w-[300px] h-[200px] rounded-lg overflow-hidden flex-shrink-0"><img
+                                src="pic/PHOTOGRAPHY/34cca93c0941008ee8eeb634cebff3d1.webp"
+                                class="w-full h-full object-cover" alt="Photo 3"></div>
+                        <div class="w-[300px] h-[200px] rounded-lg overflow-hidden flex-shrink-0"><img
+                                src="pic/PHOTOGRAPHY/79b86e4f9c3b9b01183c48cd341585d4.webp"
+                                class="w-full h-full object-cover" alt="Photo 4"></div>
+                        <div class="w-[300px] h-[200px] rounded-lg overflow-hidden flex-shrink-0"><img
+                                src="pic/PHOTOGRAPHY/84ee7e0bdccf8db789d8b683fb5b1759.webp"
+                                class="w-full h-full object-cover" alt="Photo 5"></div>
+                    </div>
+                </div>
+
+                <!-- 05 MAKEUP AND GROOMING -->
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mb-16">
+                    <div class="lg:pr-12">
+                        <div class="flex items-baseline gap-4 mb-6">
+                            <span class="text-4xl font-serif text-[#1a0b0b]/30">05</span>
+                            <h3 class="text-3xl font-serif text-[#1a0b0b] uppercase tracking-wide">Makeup & Grooming
+                            </h3>
+                        </div>
+                        <p class="text-gray-600 text-lg leading-relaxed mb-8">
+                            Look your absolute best on your big day! We connect you with top makeup artists and grooming
+                            experts who understand your skin and style, ensuring you shine with confidence and elegance.
+                        </p>
+                        <button
+                            class="bg-[#4CD9D9] hover:bg-[#3bc3c3] text-white font-medium py-3 px-8 rounded-lg shadow-lg shadow-[#4CD9D9]/30 transition-all flex items-center gap-2">
+                            Book Us for Makeup
+                        </button>
+                    </div>
+                    <div class="relative h-[400px] rounded-r-3xl overflow-hidden shadow-2xl group">
+                        <img src="pic/MAKEUP AND GROOMING/96f1aed45d5c41ded832f36da8a53bc5.webp"
+                            class="service-slideshow w-full h-full object-cover transition-all duration-700 group-hover:scale-105"
+                            alt="Bridal Makeup"
+                            data-images='["pic/MAKEUP AND GROOMING/28bc3761c661226f3039bc2e92b990ab.webp", "pic/MAKEUP AND GROOMING/3665ce81752286169274e506b2f956f1.webp", "pic/MAKEUP AND GROOMING/613f49999788eaf16db9198f6f4b0f1a.webp", "pic/MAKEUP AND GROOMING/96f1aed45d5c41ded832f36da8a53bc5.webp", "pic/MAKEUP AND GROOMING/image1.png"]'>
+                    </div>
+                </div>
+                <!-- Scrolling Gallery 05 -->
+                <div class="relative w-full overflow-hidden mb-32 group">
+                    <div class="flex gap-4 animate-scroll w-[max-content]">
+                        <div class="w-[300px] h-[200px] rounded-lg overflow-hidden flex-shrink-0"><img
+                                src="pic/MAKEUP AND GROOMING/28bc3761c661226f3039bc2e92b990ab.webp"
+                                class="w-full h-full object-cover" alt="Makeup 1"></div>
+                        <div class="w-[300px] h-[200px] rounded-lg overflow-hidden flex-shrink-0"><img
+                                src="pic/MAKEUP AND GROOMING/3665ce81752286169274e506b2f956f1.webp"
+                                class="w-full h-full object-cover" alt="Makeup 2"></div>
+                        <div class="w-[300px] h-[200px] rounded-lg overflow-hidden flex-shrink-0"><img
+                                src="pic/MAKEUP AND GROOMING/613f49999788eaf16db9198f6f4b0f1a.webp"
+                                class="w-full h-full object-cover" alt="Makeup 3"></div>
+                        <div class="w-[300px] h-[200px] rounded-lg overflow-hidden flex-shrink-0"><img
+                                src="pic/MAKEUP AND GROOMING/96f1aed45d5c41ded832f36da8a53bc5.webp"
+                                class="w-full h-full object-cover" alt="Makeup 4"></div>
+                        <div class="w-[300px] h-[200px] rounded-lg overflow-hidden flex-shrink-0"><img
+                                src="pic/MAKEUP AND GROOMING/image1.png" class="w-full h-full object-cover"
+                                alt="Makeup 5"></div>
+                        <!-- Repeat -->
+                        <div class="w-[300px] h-[200px] rounded-lg overflow-hidden flex-shrink-0"><img
+                                src="pic/MAKEUP AND GROOMING/28bc3761c661226f3039bc2e92b990ab.webp"
+                                class="w-full h-full object-cover" alt="Makeup 1"></div>
+                        <div class="w-[300px] h-[200px] rounded-lg overflow-hidden flex-shrink-0"><img
+                                src="pic/MAKEUP AND GROOMING/3665ce81752286169274e506b2f956f1.webp"
+                                class="w-full h-full object-cover" alt="Makeup 2"></div>
+                        <div class="w-[300px] h-[200px] rounded-lg overflow-hidden flex-shrink-0"><img
+                                src="pic/MAKEUP AND GROOMING/613f49999788eaf16db9198f6f4b0f1a.webp"
+                                class="w-full h-full object-cover" alt="Makeup 3"></div>
+                        <div class="w-[300px] h-[200px] rounded-lg overflow-hidden flex-shrink-0"><img
+                                src="pic/MAKEUP AND GROOMING/96f1aed45d5c41ded832f36da8a53bc5.webp"
+                                class="w-full h-full object-cover" alt="Makeup 4"></div>
+                        <div class="w-[300px] h-[200px] rounded-lg overflow-hidden flex-shrink-0"><img
+                                src="pic/MAKEUP AND GROOMING/image1.png" class="w-full h-full object-cover"
+                                alt="Makeup 5"></div>
+                        <div class="w-[300px] h-[200px] rounded-lg overflow-hidden flex-shrink-0"><img
+                                src="pic/MAKEUP AND GROOMING/28bc3761c661226f3039bc2e92b990ab.webp"
+                                class="w-full h-full object-cover" alt="Makeup 1"></div>
+                        <div class="w-[300px] h-[200px] rounded-lg overflow-hidden flex-shrink-0"><img
+                                src="pic/MAKEUP AND GROOMING/3665ce81752286169274e506b2f956f1.webp"
+                                class="w-full h-full object-cover" alt="Makeup 2"></div>
+                        <div class="w-[300px] h-[200px] rounded-lg overflow-hidden flex-shrink-0"><img
+                                src="pic/MAKEUP AND GROOMING/613f49999788eaf16db9198f6f4b0f1a.webp"
+                                class="w-full h-full object-cover" alt="Makeup 3"></div>
+                        <div class="w-[300px] h-[200px] rounded-lg overflow-hidden flex-shrink-0"><img
+                                src="pic/MAKEUP AND GROOMING/96f1aed45d5c41ded832f36da8a53bc5.webp"
+                                class="w-full h-full object-cover" alt="Makeup 4"></div>
+                        <div class="w-[300px] h-[200px] rounded-lg overflow-hidden flex-shrink-0"><img
+                                src="pic/MAKEUP AND GROOMING/image1.png" class="w-full h-full object-cover"
+                                alt="Makeup 5"></div>
+                    </div>
+                </div>
+
             </div>
         </section>
         <!-- Budget Compatibility Section -->
@@ -582,8 +937,40 @@
         const mobileMenuBtn = document.getElementById('mobile-menu-btn');
         const mobileMenu = document.getElementById('mobile-menu');
 
-        mobileMenuBtn.addEventListener('click', () => {
-            mobileMenu.classList.toggle('hidden');
+        if (mobileMenuBtn && mobileMenu) {
+            mobileMenuBtn.addEventListener('click', () => {
+                mobileMenu.classList.toggle('hidden');
+            });
+        }
+
+        // Loading Screen Logic
+        window.addEventListener('load', () => {
+            const loader = document.getElementById('page-loader');
+            setTimeout(() => {
+                loader.style.opacity = '0';
+                setTimeout(() => {
+                    loader.style.display = 'none';
+                }, 700);
+            }, 1000);
+
+            // Slideshow Logic for Big Service Images
+            const slideshows = document.querySelectorAll('.service-slideshow');
+            slideshows.forEach(img => {
+                const images = JSON.parse(img.dataset.images);
+                let currentIndex = 0;
+
+                setInterval(() => {
+                    // Start fade out
+                    img.style.opacity = '0';
+                    setTimeout(() => {
+                        // Change image
+                        currentIndex = (currentIndex + 1) % images.length;
+                        img.src = images[currentIndex];
+                        // Fade in
+                        img.style.opacity = '1';
+                    }, 700); // Wait for transition
+                }, 4000); // Change every 4 seconds
+            });
         });
     </script>
 </body>

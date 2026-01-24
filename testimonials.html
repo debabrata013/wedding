@@ -9,7 +9,7 @@
     <link href="https://fonts.googleapis.com" rel="preconnect" />
     <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
     <link
-        href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700;800&amp;family=Playfair+Display:wght@400;600;700&amp;display=swap"
+        href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Manrope:wght@400;500;700;800&family=Playfair+Display:wght@400;600;700&display=swap"
         rel="stylesheet" />
     <link
         href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
@@ -31,6 +31,7 @@
                     fontFamily: {
                         "display": ["Manrope", "sans-serif"],
                         "serif": ["Playfair Display", "serif"],
+                        "script": ["Great Vibes", "cursive"],
                     },
                     borderRadius: { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" },
                 },
@@ -51,58 +52,110 @@
 </head>
 
 <body class="font-display bg-background-light dark:bg-background-dark text-[#292524] dark:text-stone-100">
+    <!-- Loading Screen -->
+    <div id="page-loader"
+        class="fixed inset-0 z-[100] bg-white flex items-center justify-center transition-opacity duration-700">
+        <div class="relative w-24 h-24 flex items-center justify-center">
+            <!-- Heart 1 -->
+            <span class="material-symbols-outlined text-rose-300 absolute text-4xl transform scale-0 animate-heart-grow"
+                style="animation-delay: 0.1s;">favorite</span>
+            <!-- Heart 2 -->
+            <span class="material-symbols-outlined text-rose-400 absolute text-5xl transform scale-0 animate-heart-grow"
+                style="animation-delay: 0.3s; margin-left: -20px; margin-top: 10px;">favorite</span>
+            <!-- Heart 3 -->
+            <span class="material-symbols-outlined text-rose-500 absolute text-3xl transform scale-0 animate-heart-grow"
+                style="animation-delay: 0.2s; margin-left: 20px; margin-top: -10px;">favorite</span>
+        </div>
+    </div>
+    <style>
+        @keyframes growHeart {
+            0% {
+                transform: scale(0);
+                opacity: 0;
+            }
+
+            50% {
+                transform: scale(1.2);
+                opacity: 1;
+            }
+
+            100% {
+                transform: scale(1);
+                opacity: 1;
+            }
+        }
+
+        .animate-heart-grow {
+            animation: growHeart 0.5s ease-out forwards;
+        }
+    </style>
     <div class="relative flex min-h-screen w-full flex-col">
         <!-- Navigation -->
         <header
-            class="sticky top-0 z-50 border-b border-rose-100 dark:border-stone-800 bg-white/95 dark:bg-background-dark/95 backdrop-blur-md shadow-sm">
-            <div class="flex items-center justify-between px-6 md:px-10 py-4">
-                <div class="flex items-center gap-3 text-primary">
-                    <div class="size-9 flex items-center justify-center rounded-full bg-rose-50 dark:bg-rose-900/20">
-                        <span class="material-symbols-outlined text-3xl">favorite</span>
+            class="sticky top-0 z-50 bg-[#1a0b0b]/95 backdrop-blur-md border-b border-white/10 shadow-xl transition-all duration-300">
+            <div class="max-w-[1400px] mx-auto px-4 md:px-8">
+                <!-- Desktop Nav -->
+                <div class="hidden lg:flex items-center justify-center py-2">
+                    <!-- Left Links -->
+                    <nav class="flex items-center gap-8 xl:gap-12 pt-4">
+                        <a href="index.html"
+                            class="text-[#D4AF37] hover:text-white transition-all text-3xl font-script tracking-wide">Home</a>
+                        <a href="services.html"
+                            class="text-[#D4AF37] hover:text-white transition-all text-3xl font-script tracking-wide">Services</a>
+                        <a href="portfolio.html"
+                            class="text-[#D4AF37] hover:text-white transition-all text-3xl font-script tracking-wide">Gallery</a>
+                    </nav>
+
+                    <!-- Logo Center -->
+                    <div class="flex flex-col items-center px-12 relative -top-2">
+                        <div class="flex flex-col items-center justify-center text-[#D4AF37]">
+                            <!-- Placeholder for the intricate logo in the image -->
+                            <div
+                                class="relative size-16 flex items-center justify-center border-2 border-[#D4AF37] rounded-full p-2 mb-1">
+                                <span class="material-symbols-outlined text-4xl">favorite</span>
+                                <div class="absolute -top-3 text-2xl font-script">W</div>
+                            </div>
+                            <h1
+                                class="text-[#D4AF37] text-lg font-serif font-bold tracking-[0.2em] uppercase whitespace-nowrap">
+                                WedPlan</h1>
+                        </div>
                     </div>
-                    <h2
-                        class="text-[#292524] dark:text-white text-2xl font-serif font-bold leading-tight tracking-tight">
-                        WedPlan</h2>
+
+                    <!-- Right Links -->
+                    <nav class="flex items-center gap-8 xl:gap-12 pt-4">
+                        <a href="testimonials.html"
+                            class="text-[#D4AF37] hover:text-white transition-all text-3xl font-script tracking-wide">Testimonials</a>
+                        <a href="contactus.html"
+                            class="text-[#D4AF37] hover:text-white transition-all text-3xl font-script tracking-wide">Contact
+                            Us</a>
+                    </nav>
                 </div>
-                <div class="hidden md:flex flex-1 justify-end gap-8">
-                    <div class="flex items-center gap-8">
-                        <a class="text-[#292524] dark:text-stone-300 text-sm font-semibold hover:text-primary transition-colors uppercase tracking-wide"
-                            href="index.html">Home</a>
-                        <a class="text-[#292524] dark:text-stone-300 text-sm font-semibold hover:text-primary transition-colors uppercase tracking-wide"
-                            href="services.html">Services</a>
-                        <a class="text-[#292524] dark:text-stone-300 text-sm font-semibold hover:text-primary transition-colors uppercase tracking-wide"
-                            href="portfolio.html">Portfolio</a>
-                        <a class="text-[#292524] dark:text-stone-300 text-sm font-semibold hover:text-primary transition-colors uppercase tracking-wide"
-                            href="testimonials.html">Testimonials</a>
-                        <a class="text-[#292524] dark:text-stone-300 text-sm font-semibold hover:text-primary transition-colors uppercase tracking-wide"
-                            href="contactus.html">Contact</a>
+
+                <!-- Mobile Header -->
+                <div class="lg:hidden flex items-center justify-between py-4">
+                    <div class="flex items-center gap-2 text-[#D4AF37]">
+                        <span class="material-symbols-outlined text-3xl">favorite</span>
+                        <span class="text-xl font-serif font-bold tracking-widest uppercase">WedPlan</span>
                     </div>
-                    <button
-                        class="flex min-w-[84px] cursor-pointer items-center justify-center overflow-hidden rounded-full h-10 px-6 bg-primary hover:bg-primary-dark transition-colors text-white text-sm font-bold shadow-lg shadow-rose-500/20">
-                        <span class="truncate">Free Consultation</span>
+                    <button id="mobile-menu-btn" class="text-[#D4AF37] focus:outline-none">
+                        <span class="material-symbols-outlined text-3xl">menu</span>
                     </button>
                 </div>
-                <button id="mobile-menu-btn" class="md:hidden text-primary focus:outline-none">
-                    <span class="material-symbols-outlined text-3xl">menu</span>
-                </button>
             </div>
+
             <!-- Mobile Menu -->
             <div id="mobile-menu"
-                class="hidden md:hidden bg-white dark:bg-background-dark border-t border-rose-100 dark:border-stone-800 px-6 py-4 flex flex-col gap-4">
-                <a class="text-[#292524] dark:text-stone-300 text-sm font-semibold hover:text-primary transition-colors uppercase tracking-wide"
+                class="hidden lg:hidden bg-[#1a0b0b] border-t border-white/10 px-6 py-6 flex flex-col gap-6 absolute w-full left-0 shadow-2xl">
+                <a class="text-[#D4AF37] text-2xl font-script hover:text-white transition-colors text-center"
                     href="index.html">Home</a>
-                <a class="text-[#292524] dark:text-stone-300 text-sm font-semibold hover:text-primary transition-colors uppercase tracking-wide"
+                <a class="text-[#D4AF37] text-2xl font-script hover:text-white transition-colors text-center"
                     href="services.html">Services</a>
-                <a class="text-[#292524] dark:text-stone-300 text-sm font-semibold hover:text-primary transition-colors uppercase tracking-wide"
-                    href="portfolio.html">Portfolio</a>
-                <a class="text-[#292524] dark:text-stone-300 text-sm font-semibold hover:text-primary transition-colors uppercase tracking-wide"
+                <a class="text-[#D4AF37] text-2xl font-script hover:text-white transition-colors text-center"
+                    href="portfolio.html">Gallery</a>
+                <a class="text-[#D4AF37] text-2xl font-script hover:text-white transition-colors text-center"
                     href="testimonials.html">Testimonials</a>
-                <a class="text-[#292524] dark:text-stone-300 text-sm font-semibold hover:text-primary transition-colors uppercase tracking-wide"
-                    href="contactus.html">Contact</a>
-                <button
-                    class="w-full flex cursor-pointer items-center justify-center overflow-hidden rounded-full h-10 px-6 bg-primary hover:bg-primary-dark transition-colors text-white text-sm font-bold shadow-lg shadow-rose-500/20">
-                    <span class="truncate">Free Consultation</span>
-                </button>
+                <a class="text-[#D4AF37] text-2xl font-script hover:text-white transition-colors text-center"
+                    href="contactus.html">Contact Us</a>
             </div>
         </header>
         <main class="flex-grow">
@@ -604,8 +657,21 @@
         const mobileMenuBtn = document.getElementById('mobile-menu-btn');
         const mobileMenu = document.getElementById('mobile-menu');
 
-        mobileMenuBtn.addEventListener('click', () => {
-            mobileMenu.classList.toggle('hidden');
+        if (mobileMenuBtn && mobileMenu) {
+            mobileMenuBtn.addEventListener('click', () => {
+                mobileMenu.classList.toggle('hidden');
+            });
+        }
+
+        // Loading Screen Logic
+        window.addEventListener('load', () => {
+            const loader = document.getElementById('page-loader');
+            setTimeout(() => {
+                loader.style.opacity = '0';
+                setTimeout(() => {
+                    loader.style.display = 'none';
+                }, 700);
+            }, 1000);
         });
     </script>
 </body>
